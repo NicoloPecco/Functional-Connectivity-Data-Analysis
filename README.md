@@ -48,7 +48,7 @@ This pipeline helps mitigate those issues by:
 
 ## 🧠 Step 1 — ROI Decomposition  
 
-### 🔹 Input  
+🔹 Input  
 A folder of `.mat` files — one per subject — each containing a square **connectivity matrix** (N×N) with ROI labels in the **first row and first column**.  
 
 Example MATLAB structure:
@@ -60,15 +60,9 @@ Example MATLAB structure:
 
 Each `.mat` file represents one subject.
 
-### 🔹 Usage  
+**Usage**  
 
-```bash
-python decompose_connectivity_per_roi_from_mat.py \
-  --mat-dir ./matrices \
-  --out-dir ./All_ROIs_CSV \
-  --var-name SMA
-
-Argument	Description
+**Argument	Description**
 --mat-dir	Folder containing .mat files
 --out-dir	Output folder for ROI CSVs
 --var-name	Name of matrix variable inside each .mat
@@ -76,20 +70,12 @@ Argument	Description
 Each output CSV will contain:
 subject_id | ROI_2 | ROI_3 | ROI_4 | ...
 
-⚙️ Step 2 — Nested Cross-Validation & Feature Selection
-🔹 Input
+## ⚙️ **Step 2 — Nested Cross-Validation & Feature Selection**
+🔹 **Input**
 The folder of ROI CSVs generated in Step 1, with an added binary label column (e.g., 0/1, Control/CHD, IDH-mut/WT).
 Example structure:
 subject_id	label	ROI_2	ROI_3	ROI_4	...
-🔹 Usage
-python nested_cv_feature_selection.py \
-  --roi-dir ./All_ROIs_CSV \
-  --out-dir ./Results \
-  --n-splits-outer 4 \
-  --n-splits-inner 4 \
-  --seed 42
-
-Argument	Description
+**Argument	Description**
 --roi-dir	Folder containing ROI CSVs
 --out-dir	Output folder for results
 --n-splits-outer	Outer CV folds (default = 4)
