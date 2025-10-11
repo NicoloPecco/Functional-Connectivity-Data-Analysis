@@ -52,7 +52,6 @@ This pipeline helps mitigate those issues by:
 
 ## 🧠 Step 1 — ROI Decomposition  
 
-🔹 Input  
 A folder of `.mat` files — one per subject — each containing a square **connectivity matrix** (N×N) with ROI labels in the **first row and first column**.  
 
 Example MATLAB structure:
@@ -68,11 +67,13 @@ Each `.mat` file represents one subject.
 
 **Argument	Description**
 --mat-dir	Folder containing .mat files
+
 --out-dir	Output folder for ROI CSVs
+
 --var-name	Name of matrix variable inside each .mat
---keep-self	(optional) Keep self-connections (by default they’re dropped)
+
 Each output CSV will contain:
-subject_id | ROI_2 | ROI_3 | ROI_4 | ...
+subject_id | ROI_2 | ROI_3 | ROI_4 | ... (The output - by default - does not contain self-connection)
 
 ## ⚙️ **Step 2 — Nested Cross-Validation & Feature Selection**
 🔹 **Input**
