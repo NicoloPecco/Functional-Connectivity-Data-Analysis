@@ -13,7 +13,7 @@ The goal is to make model training **reproducible, robust, and interpretable**, 
 
 To tackle this, the pipeline:
 1. **Decomposes** full subject-wise connectivity matrices into *per-ROI connectivity profiles* (one CSV per region).
-2. **Runs nested cross-validation** with **backward Sequential Feature Selection (SFS)** using a **K-Nearest Neighbors (KNN)** classifier, to identify the most discriminative connections for **binary classification** problems (e.g., CHD vs Control, IDH-mut vs WT, etc.).
+2. **Runs nested cross-validation** with **backward Sequential Feature Selection (SFS)** using a **K-Nearest Neighbors (KNN)** classifier, to identify the most discriminative connections for **binary classification** problems.
 
 ---
 
