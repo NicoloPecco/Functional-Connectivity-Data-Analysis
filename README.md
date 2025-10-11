@@ -91,19 +91,16 @@ subject_id	label	ROI_2	ROI_3	ROI_4	...
 
 --seed	Random seed for reproducibility
 
-📊 **Outputs**
+---
+
+📊 **Final Outputs**
 For each ROI, the script produces:
 File	Description
 ROI_X_Best_iterations.csv	Best feature subset per outer fold
-ROI_X_Features_Union.csv	Union of selected features across folds
-ROI_X_Features_Inter.csv	Intersection (stable features) across folds
+ROI_X_Features_Union.csv	Union of selected features across folds # all features ever selected across folds → broad feature importance.
+ROI_X_Features_Inter.csv	Intersection (stable features) across folds # features consistently selected across folds → stable biomarkers.
 ROI_X_metrics.json	Mean ± SD of test metrics
-ALL_ROI_summary.csv	Summary ranking of all ROIs by performance
-
-🧾 Interpreting the results
-Union file: all features ever selected across folds → broad feature importance.
-Intersection file: features consistently selected across folds → stable biomarkers.
-Summary file: ranks ROIs by mean balanced accuracy → identify most predictive regions.
+ALL_ROI_summary.csv	Summary ranking of all ROIs by performance # ranks ROIs by mean balanced accuracy → identify most predictive regions.
 
 🧑‍💻 **Citation**
 To be Updatated
