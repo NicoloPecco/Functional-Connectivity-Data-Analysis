@@ -20,12 +20,10 @@ To tackle this, the pipeline:
 ## 🧰 Repository Structure  
 
 Functional-Connectivity-Data-Analysis/
-│
-├── decompose_connectivity_per_roi_from_mat.py # Step 1: ROI-wise decomposition
-├── nested_cv_feature_selection.py # Step 2: Nested CV + SFS classification
-├── README.md # You're reading it :)
-└── example_data/ (optional) # Synthetic demo matrices (optional)
-
+  ├─ decompose_connectivity_per_roi_from_mat.py   # Step 1: ROI-wise decomposition
+  ├─ nested_cv_feature_selection.py               # Step 2: Nested CV + SFS classification
+  ├─ README.md                                    # You're reading it :)
+  └─ example_data/                                # (optional) Synthetic demo matrices
 
 ---
 
