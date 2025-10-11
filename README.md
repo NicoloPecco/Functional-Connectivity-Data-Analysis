@@ -1,5 +1,5 @@
 # 🧠 Fetal fMRI Nested SFS Pipeline
-*A modular framework for per-ROI connectivity decomposition and nested feature selection using backward SFS (KNN)*  
+*A modular framework for per-ROI connectivity decomposition and nested feature selection using backward SFS (KNN) for binary classification task*  
 
 ---
 
@@ -76,18 +76,22 @@ Each output CSV will contain:
 subject_id | ROI_2 | ROI_3 | ROI_4 | ... (The output - by default - does not contain self-connection)
 
 ## ⚙️ **Step 2 — Nested Cross-Validation & Feature Selection**
-🔹 **Input**
+
 The folder of ROI CSVs generated in Step 1, with an added binary label column (e.g., 0/1, Control/CHD, IDH-mut/WT).
 Example structure:
 subject_id	label	ROI_2	ROI_3	ROI_4	...
 **Argument	Description**
 --roi-dir	Folder containing ROI CSVs
+
 --out-dir	Output folder for results
+
 --n-splits-outer	Outer CV folds (default = 4)
+
 --n-splits-inner	Inner CV folds for SFS (default = 4)
+
 --seed	Random seed for reproducibility
 
-📊 Outputs
+📊 **Outputs**
 For each ROI, the script produces:
 File	Description
 ROI_X_Best_iterations.csv	Best feature subset per outer fold
@@ -96,25 +100,11 @@ ROI_X_Features_Inter.csv	Intersection (stable features) across folds
 ROI_X_metrics.json	Mean ± SD of test metrics
 ALL_ROI_summary.csv	Summary ranking of all ROIs by performance
 
-📈 How it works internally
-Outer CV (4 folds) → Splits subjects into train/test partitions.
-Inner CV (4 folds) → Performs backward SFS to iteratively remove weak features using KNN accuracy.
-1-SE Rule → Chooses the smallest subset whose CV accuracy is within one standard error of the best model.
-Final Model → Trains KNN on the selected features and evaluates on held-out test fold.
-Evaluated metrics:
-Accuracy
-F1 (macro + weighted)
-Balanced Accuracy
-Matthews Correlation Coefficient
-
 🧾 Interpreting the results
 Union file: all features ever selected across folds → broad feature importance.
 Intersection file: features consistently selected across folds → stable biomarkers.
 Summary file: ranks ROIs by mean balanced accuracy → identify most predictive regions.
 
-🧑‍💻 Citation
-If you use this pipeline, please cite:
-Pecco, N. et al. (2025).
-A modular Python framework for nested feature selection in connectomic studies.
-Università Vita-Salute San Raffaele, Milan.
+🧑‍💻 **Citation**
+To be Updatated
 
