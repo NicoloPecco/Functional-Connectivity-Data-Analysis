@@ -52,7 +52,7 @@ This pipeline helps mitigate those issues by:
 
 A folder of `.mat` files — one per subject — each containing a square **connectivity matrix** (N×N) with ROI labels in the **first row and first column**.  
 
-Example Table structure:
+Example (CONN) Table structure:
 
 |     | ROI_1 | ROI_2 | ROI_3 | ... |
 |-----|-------|-------|-------|-----|
