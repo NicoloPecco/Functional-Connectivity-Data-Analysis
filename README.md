@@ -64,6 +64,7 @@ Each `.mat` file represents one subject.
 **Usage**  
 
 **Argument	Description**
+
 --mat-dir	Folder containing .mat files
 
 --out-dir	Output folder for ROI CSVs
@@ -78,7 +79,9 @@ subject_id | ROI_2 | ROI_3 | ROI_4 | ... (The output - by default - does not con
 The folder of ROI CSVs generated in Step 1, with an added binary label column (e.g., 0/1, Control/CHD, IDH-mut/WT).
 Example structure:
 subject_id	label	ROI_2	ROI_3	ROI_4	...
+
 **Argument	Description**
+
 --roi-dir	Folder containing ROI CSVs
 
 --out-dir	Output folder for results
