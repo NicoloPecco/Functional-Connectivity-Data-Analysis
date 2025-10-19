@@ -107,6 +107,8 @@ For each ROI, the script produces:
 
 **ALL_ROI_summary.csv**	Summary ranking of all ROIs by performance # ranks ROIs by mean balanced accuracy → identify most predictive regions.
 
+---
+
 🧑‍💻 **Citation**
 
 To be Updatated
